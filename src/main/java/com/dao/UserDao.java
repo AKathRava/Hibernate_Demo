@@ -24,6 +24,8 @@ public class UserDao {
     
         session.save(user); //save method use
         
+      //  session.persist(user); not outdated             save-- ->oudated
+        
         //can also use session.persist(user);
         
         tr.commit(); //save the changes
@@ -33,6 +35,7 @@ public class UserDao {
         return "User Registered Successfully";
     }
     
+    //save delete update insert -> session,transaction->commit 
    
     
     public User getUser(int id)
@@ -96,10 +99,5 @@ public class UserDao {
         session.close();
         
         return "Deleted";
-    }
-    
-    
-    
-    
-    
+    }    
 }
